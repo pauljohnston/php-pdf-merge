@@ -1,4 +1,4 @@
-<?php namespace Jurosh\PDFMerge;
+<?php namespace Pauljohnston\PDFMerge;
 
 use Exception;
 use setasign\Fpdi\Fpdi AS FPDI;
@@ -19,14 +19,14 @@ class PDFMerger {
      * Add a PDF for inclusion in the merge with a valid file path.
      * Params are defined like array:  
      *  'pages' => '...',
-     *  'orientation' => 'vertical / horizontal'
+     *  'orientation' => 'portrait / landscape'
      * 
      * Pages should be formatted: 1,3,6, 12-16.
      * @param $filepath
      * @param $param
      * @return PDFMerger
      */
-    public function addPDF($filepath, $pages = 'all', $orientation = 'vertical') {
+    public function addPDF($filepath, $pages = 'all', $orientation = 'portrait') {
         if (file_exists($filepath)) {
             $file = new PdfObject;
             
@@ -72,7 +72,7 @@ class PDFMerger {
                     $template = $fpdi->importPage($i);
                     $size = $fpdi->getTemplateSize($template);
 
-                    $fpdi->AddPage($file->getOrientationCode(), array($size['width'], $size['height']));
+                    $fpdi->AddPage($file->getOrientationKey(), array($size['width'], $size['height']));
                     $fpdi->useTemplate($template);
                 }
             } else {
@@ -82,7 +82,7 @@ class PDFMerger {
                     }
                     $size = $fpdi->getTemplateSize($template);
 
-                    $fpdi->AddPage($file->getOrientationCode(), array($size['w'], $size['h']));
+                    $fpdi->AddPage($file->getOrientationKey(), array($size['width'], $size['height']));
                     $fpdi->useTemplate($template);
                 }
             }

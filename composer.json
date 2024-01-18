@@ -1,29 +1,31 @@
 {
-  "name": "jurosh/pdf-merge",
+  "name": "pauljohnston/php-pdf-merge",
   "description": "PHP PDF Merger",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "keywords": [
     "pdf",
     "merge"
   ],
-  "homepage": "https://github.com/jurosh/php-pdf-merge",
+  "homepage": "https://github.com/pauljohnston/php-pdf-merge",
   "license": "MIT",
   "require": {
-    "php": ">=5.6.20",
+    "php": ">=8.2",
     "setasign/fpdf": "^1.8",
-    "setasign/fpdi": "^2.3"
+    "setasign/fpdi": "^2.6"
   },
   "authors": [
     {
-      "name": "Juraj Husar",
-      "email": "jurosh@jurosh.com",
-      "homepage": "http://jurosh.com"
+      "name": "Paul Johnston",
+      "email": "github@paulonline.co.uk",
+      "homepage": "https://paulonline.co.uk"
     }
   ],
   "autoload": {
     "classmap": [
-      "src/Jurosh/PDFMerge/PDFMerger.php",
-      "src/Jurosh/PDFMerge/PDFObject.php"
+      "src/Pauljohnston/PDFMerge/PDFMerger.php",
+      "src/Pauljohnston/PDFMerge/PDFObject.php"
     ]
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
